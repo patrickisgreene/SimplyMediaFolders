@@ -1,0 +1,31 @@
+services:
+
+  wordpress:
+    image: wordpress
+    restart: unless-stopped
+    container_name: $CONTAINER_NAME
+    ports:
+      - 8080:80
+    env_file: .env
+    depends_on:
+      - db
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: $MYSQL_USER
+      WORDPRESS_DB_PASSWORD: $MYSQL_PASSWORD
+      WORDPRESS_DB_NAME: $MYSQL_DATABASE
+      WORDPRESS_DEBUG: $WORDPRESS_DEBUG
+    volumes:
+      - ./simply-media-folders:/var/www/html/wp-content/plugins/simply-media-folders
+
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - ./db/:/var/lib/mysql
+
+volumes:
+  db:

@@ -1,0 +1,214 @@
+/* Upload.php admin area CSS */
+
+#wp-media-grid {
+    width: 100%;
+}
+/* Layout */
+.smf-wrap {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#smf {
+    padding: 0px;
+    border-radius: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    max-height: 1000px;
+    margin-right:10px;
+    position: relative;
+    margin-top: 20px;
+    padding: .7em 2em 1em;
+    max-width: 520px;
+    border: 1px solid #c3c4c7;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+    background: #fff;
+    box-sizing: border-box;
+}
+
+#smf-tree-wrap {
+    flex-grow: 1;
+}
+
+#smf:has(#smf-tree-wrap.ui-droppable-hover) {
+    border-radius: 5px;
+    background: #f6f7f7;
+    border: 1px solid #2271b1 !important;
+}
+
+/* Header Bar */
+#smf-header {
+    display: flex;
+    flex-direction: row;
+}
+
+#smf-header a {
+    display: flex;
+    cursor: pointer;
+    padding-left: 9px;
+    padding-right: 9px;
+    align-items: center;
+    color: #2271b1;
+    font-size: large;
+    background: #f6f7f7;
+    border: 1px solid #2271b1;
+
+}
+
+#smf-header a:not(.smf-dialog-showing):hover {
+    border-color: #3582c4;
+    background-color: #f0f0f1;
+}
+
+#smf-create-wrapper {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    border: 1px solid black;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    padding: 5px 2px 5px 2px;
+}
+
+#smf-create-name {
+    flex-grow: 1;
+    outline: none;
+    border-style: none;
+}
+
+#smf-add {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#smf-add-spinner {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 15px;
+    height: 15px;
+    background-size: 15px 15px;
+}
+
+#smf-settings {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+#smf-settings.smf-dialog-showing {
+    color: red;
+    border-color: red;
+    padding-left: 6px;
+    padding-right: 5px;
+}
+
+/* Settings Dialog */
+#smf-settings-dialog {
+    margin: 5px;
+    z-index: 1000;
+    min-width: unset;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: fixed;
+    width: 245px;
+    margin-top: 40px;
+}
+
+.smf-form-group {
+    border: 1px solid #c3c4c7;
+    border-radius: 5px;
+    margin: 5px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.smf-form-group fieldset {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.smf-form-group fieldset input[type="number"] {
+    width: 50px;
+}
+
+.smf-form-group>label {
+    position: relative;
+    top: -12px;
+    left: 10px;
+    background-color: white;
+    color: #2271b1;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-weight: 900;
+    font-size:large;
+}
+
+/* Folder Item */
+
+.smf-node-actions {
+    display: flex;
+    padding: 2px;
+}
+
+.smf-node-actions a {
+    padding: 1px;
+    color: #2271b1;
+    font-size: large;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.smf-node-actions a:hover {
+    border-color: #2271b1;
+}
+
+.smf-node-edit-delete span.smf-node-icon,
+.smf-node-save-save span.smf-node-icon {
+    position: absolute;
+}
+
+.smf-node-edit-delete span.spinner,
+.smf-node-save-save span.spinner {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 15px;
+    height: 15px;
+    background-size: 15px 15px;
+}
+
+.smf-node-edit-delete,
+.smf-node-save-cancel {
+    color: red !important;
+}
+
+.smf-node-save-cancel:hover,
+.smf-node-edit-delete:hover {
+    border-color: red !important;
+}
+
+.smf-node-edit-actions,
+.smf-node-save-actions {
+    display: none;
+}
+
+#smf-tree:not(.smf-edit-active) .jqtree-element:hover .smf-node-edit-actions {
+    display: flex;
+    border-color: #2271b1;
+}
+
+.ui-draggable-dragging {
+    width: 100px !important;
+    height: 100px !important;
+}
+
+li.ui-droppable-hover {
+    border-color: #2271b1;
+    background-color: #f0f0f1;
+}
